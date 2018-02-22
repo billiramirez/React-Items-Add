@@ -16,22 +16,22 @@ class App extends Component {
 
 
   nameChangedHandler = (event, id) => {
-    const personIndex = this.state.persons.findIndex(p => {
-      return p.id === id;
-    });
+      const personIndex = this.state.persons.findIndex(p => {
+        return p.id === id;
+      });
 
-    const person = {
-      ...this.state.persons[personIndex]
-    };
+      const person = {
+        ...this.state.persons[personIndex]
+      };
 
-    // const person = Object.assign({}, this.state.persons[personIndex]);
+      // const person = Object.assign({}, this.state.persons[personIndex]);
 
-    person.name = event.target.value;
+      person.name = event.target.value;
 
-    const persons = [...this.state.persons];
-    persons[personIndex] = person;
+      const persons = [...this.state.persons];
+      persons[personIndex] = person;
 
-    this.setState({ persons: persons });
+      this.setState({ persons: persons });
   }
 
   deletePersonHandler = (personIndex) => {
@@ -48,7 +48,8 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -69,6 +70,7 @@ class App extends Component {
           })}
         </div>
       );
+      style.backgroundColor = 'red';
     }
 
     return (
